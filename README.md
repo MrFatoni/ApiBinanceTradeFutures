@@ -1,0 +1,1 @@
+# ApiBinanceTradeFutures
