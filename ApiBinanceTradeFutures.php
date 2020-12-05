@@ -1,5 +1,5 @@
 <?php
-
+//use function print_r as pr;
 class BinanceTradeFutures
 {
     public $btc_value = 0.00;
@@ -296,8 +296,6 @@ class BinanceTradeFutures
         if (empty($balance['balances'])) {
             $balance = $this->signedRequest("v3/account", array("recvWindow" => 59000));
             if (empty($balance['balances'])) {
-                LineFinder::push("Binance Balances Error", "Binance Balances Error " . leap_mysqldate() . "\n\r");
-                KoneksiError::simpan("binance", $balance);
                 exit(json_encode($balance));
             }
         }
